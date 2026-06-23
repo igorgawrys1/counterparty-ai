@@ -1,0 +1,11 @@
+{
+    "summary": "One adverse-media hit located.",
+    "findings": [
+        {
+            "claim": "Named in a 2023 regulatory enforcement notice.",
+            "source_url": "https://regulator.example.test/notice/2023-114",
+            "confidence": 0.82,
+            "adverse": true
+        }
+    ]
+}

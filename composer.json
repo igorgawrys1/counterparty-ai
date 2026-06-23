@@ -1,0 +1,61 @@
+{
+    "name": "gawrys/counterparty-ai",
+    "description": "Optional AI-assisted risk research subsystem for counterparty-verification. Advisory only; never decides hard pass/fail.",
+    "license": "MIT",
+    "type": "library",
+    "keywords": ["due-diligence", "risk", "llm", "ai", "research"],
+    "authors": [
+        {
+            "name": "Igor Gawrys",
+            "email": "igor@fikg.pl"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/igorgawrys1/counterparty-core"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "gawrys/counterparty-core": "^0.1",
+        "psr/simple-cache": "^2.0 || ^3.0",
+        "psr/log": "^2.0 || ^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0",
+        "phpstan/phpstan": "^2.0",
+        "phpstan/phpstan-phpunit": "^2.0",
+        "vimeo/psalm": "^6.0",
+        "psalm/plugin-phpunit": "^0.19",
+        "friendsofphp/php-cs-fixer": "^3.64",
+        "nyholm/psr7": "^1.8",
+        "php-http/mock-client": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gawrys\\Counterparty\\Ai\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Gawrys\\Counterparty\\Ai\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "check": ["@cs:check", "@stan", "@psalm", "@test"],
+        "cs:check": "php-cs-fixer fix --dry-run --diff --ansi",
+        "cs:fix": "php-cs-fixer fix --ansi",
+        "stan": "phpstan analyse --ansi --memory-limit=1G",
+        "psalm": "psalm --no-progress",
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": false
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
