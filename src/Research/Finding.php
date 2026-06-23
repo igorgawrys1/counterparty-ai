@@ -6,7 +6,7 @@ namespace Gawrys\Counterparty\Ai\Research;
 
 /**
  * One qualitative observation produced by AI research. A finding without a source URL is
- * ungrounded and MUST NOT be promoted to evidence — the strategy treats it as a reason
+ * ungrounded and MUST NOT be promoted to evidence - the strategy treats it as a reason
  * for human review, not as a confirmed fact.
  */
 final readonly class Finding

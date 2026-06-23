@@ -6,7 +6,7 @@ namespace Gawrys\Counterparty\Ai\Tool;
 
 /**
  * The output of a {@see ResearchTool}. Carries the data the model may reason over, plus
- * the source URL that grounds any claim derived from it — a finding with no source must
+ * the source URL that grounds any claim derived from it - a finding with no source must
  * be treated as inconclusive, never as fact.
  */
 final readonly class ToolResult

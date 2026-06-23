@@ -14,7 +14,7 @@ calls external registries/LLMs. When reporting or contributing, keep in mind:
 
 - **Never commit secrets** (API keys, tokens). Configuration is read from the environment;
   `.env` is git-ignored and `.env.example` contains placeholders only.
-- Some credentials embed personal data (e.g. a CEIDG bearer token contains a PESEL) — treat
+- Some credentials embed personal data (e.g. a CEIDG bearer token contains a PESEL) - treat
   them as secrets and rotate any that are exposed.
 - The library persists only a due-diligence proof identifier + timestamp in `CheckResult`;
   it does not silently store PII. Please preserve that property in contributions.

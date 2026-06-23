@@ -9,7 +9,7 @@ use Gawrys\Counterparty\Ai\Research\ResearchResultParser;
 
 /**
  * Loads recorded AI responses from JSON cassette fixtures, validated through the same
- * parser used in production — so a cassette that would not parse in production cannot
+ * parser used in production - so a cassette that would not parse in production cannot
  * silently pass in tests.
  */
 final readonly class Cassette

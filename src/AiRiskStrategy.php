@@ -25,7 +25,7 @@ use Psr\SimpleCache\CacheInterface;
 
 /**
  * AI-backed risk strategy: drop-in replacement for the rule-based default behind the same
- * {@see RiskStrategy} seam. It is ADVISORY ONLY — it consumes the finished report as
+ * {@see RiskStrategy} seam. It is ADVISORY ONLY - it consumes the finished report as
  * ground truth and never alters hard pass/fail facts.
  *
  * Guarantees:

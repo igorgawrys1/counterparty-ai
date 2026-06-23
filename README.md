@@ -19,16 +19,16 @@ A separate package on purpose: prompts change often and must not bump the core's
 
 ## Features
 
-- **`AiRiskStrategy`** — a drop-in `RiskStrategy`; PSR-16 cached by counterparty + report +
+- **`AiRiskStrategy`** - a drop-in `RiskStrategy`; PSR-16 cached by counterparty + report +
   prompt version to bound cost.
-- **Native tool use (function calling)** — the model invokes `registry_lookup`,
+- **Native tool use (function calling)** - the model invokes `registry_lookup`,
   `web_search` and `verification_report`; the provider executes them and feeds results back,
   looping until the findings JSON is returned.
-- **Two reference providers over PSR-18, no SDK** — `AnthropicResearchProvider`,
+- **Two reference providers over PSR-18, no SDK** - `AnthropicResearchProvider`,
   `OpenAiResearchProvider`. Adding another LLM is one `AbstractAiResearchProvider` subclass.
-- **Structured output, validated** — force JSON, parse, validate, retry; malformed output is
+- **Structured output, validated** - force JSON, parse, validate, retry; malformed output is
   never trusted.
-- **Deterministic test kit** — `FakeAiResearchProvider`, recorded cassettes and an in-memory
+- **Deterministic test kit** - `FakeAiResearchProvider`, recorded cassettes and an in-memory
   PSR-16 cache, so tests run offline.
 
 ## Installation
@@ -58,7 +58,7 @@ $verifier = new Verifier($checks, $strategy, $clock);
 
 Switching LLM is a one-line change (`OpenAiResearchProvider`), or implement
 `AbstractAiResearchProvider::complete()` for any other backend. Removing this package never
-breaks the rule-based default — the core has no dependency on it.
+breaks the rule-based default - the core has no dependency on it.
 
 See the **[documentation](https://igorgawrys1.github.io/counterparty-verification/ai/)** for
 prompts, grounding rules and writing custom tools.
@@ -75,7 +75,7 @@ See [CHANGELOG.md](CHANGELOG.md).
 
 ## Contributing & Security
 
-Pull requests welcome. Report security issues privately — see [SECURITY.md](SECURITY.md).
+Pull requests welcome. Report security issues privately - see [SECURITY.md](SECURITY.md).
 
 ## Credits
 
