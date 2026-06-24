@@ -69,6 +69,8 @@ final readonly class RegistryTool implements ContextAwareTool
             return ToolResult::failed(\sprintf('No registry covers %s for %s.', $capability->value, $this->counterparty->country));
         }
 
-        return new ToolResult($result->found, $result->data, $result->sourceUrl);
+        // A "not found" lookup is a SUCCESSFUL tool execution (the registry answered), not a
+        // failure - surface the found flag in the data and always return the source URL.
+        return ToolResult::ok(['found' => $result->found] + $result->data, $result->sourceUrl);
     }
 }

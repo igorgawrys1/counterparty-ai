@@ -53,9 +53,10 @@ final class InMemoryCache implements CacheInterface
     {
         /** @var mixed $key */
         foreach ($keys as $key) {
-            if (\is_string($key)) {
-                yield $key => $this->get($key, $default);
+            if (!\is_string($key)) {
+                throw new InvalidCacheArgument('Cache key must be a string.');
             }
+            yield $key => $this->get($key, $default);
         }
     }
 
@@ -81,9 +82,10 @@ final class InMemoryCache implements CacheInterface
     {
         /** @var mixed $key */
         foreach ($keys as $key) {
-            if (\is_string($key)) {
-                $this->delete($key);
+            if (!\is_string($key)) {
+                throw new InvalidCacheArgument('Cache key must be a string.');
             }
+            $this->delete($key);
         }
 
         return true;
