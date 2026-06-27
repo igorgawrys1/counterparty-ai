@@ -1,5 +1,7 @@
 # Counterparty AI
 
+[![Packagist Version](https://img.shields.io/packagist/v/gawrys/counterparty-ai.svg)](https://packagist.org/packages/gawrys/counterparty-ai)
+[![Total Downloads](https://img.shields.io/packagist/dt/gawrys/counterparty-ai.svg)](https://packagist.org/packages/gawrys/counterparty-ai)
 [![CI](https://github.com/igorgawrys1/counterparty-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/igorgawrys1/counterparty-ai/actions/workflows/ci.yml)
 [![PHP](https://img.shields.io/badge/php-8.2%20|%208.3%20|%208.4-777bb4.svg)](https://www.php.net/)
 [![PHPStan](https://img.shields.io/badge/PHPStan-max-brightgreen.svg)](https://phpstan.org/)

@@ -105,7 +105,7 @@ abstract readonly class AbstractAiResearchProvider implements AiResearchProvider
      * Extract the array-valued elements of $key as a list of raw arrays (e.g. response
      * content blocks, tool calls, choices).
      *
-     * @param array<string, mixed> $data
+     * @param array<array-key, mixed> $data
      *
      * @return list<array<array-key, mixed>>
      */

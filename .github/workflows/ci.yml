@@ -21,12 +21,7 @@ jobs:
           coverage: none
           tools: composer:v2
       - run: composer validate --strict
-      # Until gawrys/counterparty-core is on Packagist it is pulled from its (currently
-      # private) GitHub repo, which needs auth. Provide a COMPOSER_AUTH secret, e.g.
-      # {"github-oauth":{"github.com":"<token>"}}.
       - run: composer install --no-interaction --no-progress --prefer-dist
-        env:
-          COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
       - run: composer cs:check
       - run: composer stan
       - run: composer psalm

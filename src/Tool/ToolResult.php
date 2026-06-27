@@ -12,7 +12,7 @@ namespace Gawrys\Counterparty\Ai\Tool;
 final readonly class ToolResult
 {
     /**
-     * @param array<string, mixed> $data
+     * @param array<array-key, mixed> $data
      */
     public function __construct(
         public bool $ok,
@@ -23,7 +23,7 @@ final readonly class ToolResult
     }
 
     /**
-     * @param array<string, mixed> $data
+     * @param array<array-key, mixed> $data
      */
     public static function ok(array $data, ?string $sourceUrl = null): self
     {
