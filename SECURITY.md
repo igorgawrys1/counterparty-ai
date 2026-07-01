@@ -4,7 +4,7 @@
 
 Please **do not** open a public issue for security problems. Instead, report privately via
 GitHub Security Advisories ("Report a vulnerability" on the repository's Security tab), or
-email the maintainer at **igor@fikg.pl**. You will receive an acknowledgement as soon as
+email the maintainer at **igor@gawrys.me**. You will receive an acknowledgement as soon as
 possible.
 
 ## Scope & handling of sensitive data

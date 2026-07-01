@@ -3,6 +3,11 @@
 All notable changes are documented here, following [Keep a Changelog](https://keepachangelog.com/)
 and [Semantic Versioning](https://semver.org/).
 
+## [0.1.2]
+
+### Changed
+- Maintainer contact e-mail updated to igor@gawrys.me (composer `authors`, SECURITY.md).
+
 ## [0.1.1]
 
 ### Changed
