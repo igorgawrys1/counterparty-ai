@@ -1,0 +1,47 @@
+name: Claude Code Review
+
+# Automatic PR review by Claude (Claude Code GitHub Action), authenticated with a
+# Claude Pro/Max subscription via the CLAUDE_CODE_OAUTH_TOKEN secret.
+# Requires: the Claude GitHub App installed on the repo (https://github.com/apps/claude)
+# and the CLAUDE_CODE_OAUTH_TOKEN secret (generate with `claude setup-token`).
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  claude-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Claude review
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          track_progress: true
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
+
+            Review this PR for a strict, framework-agnostic PHP package. Focus on:
+            - Correctness bugs and unhandled edge cases.
+            - Hexagonal boundaries: the core depends only on PSR interfaces; adapters and
+              framework bridges stay behind ports.
+            - Static analysis: nothing that would break PHPStan max / Psalm level 1, and no
+              weakened baselines to silence errors.
+            - Tests: new behaviour is covered; external APIs are mocked (no live network); new
+              registry drivers pass RegistryDriverContractTestCase.
+            - The AI subsystem stays advisory (never decides hard pass/fail; every claim is
+              grounded in a tool source URL; prompt version bumped when prompts change).
+            - Security: input validation, and no secrets or PII committed.
+
+            Post inline comments on the specific lines that need attention and a short
+            top-level summary. Skip trivial nits.
+          claude_args: |
+            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*)"
