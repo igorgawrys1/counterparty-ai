@@ -29,7 +29,9 @@ jobs:
             REPO: ${{ github.repository }}
             PR NUMBER: ${{ github.event.pull_request.number }}
 
-            Review this PR for a strict, framework-agnostic PHP package. Focus on:
+            This repo is a strict, framework-agnostic PHP package (Composer, PSR interfaces,
+            `Gawrys\Counterparty\` namespace) - do not infer the language from the repo name.
+            Review this PR. Focus on:
             - Correctness bugs and unhandled edge cases.
             - Hexagonal boundaries: the core depends only on PSR interfaces; adapters and
               framework bridges stay behind ports.
